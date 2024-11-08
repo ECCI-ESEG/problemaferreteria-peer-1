@@ -13,7 +13,7 @@ namespace Solucion
         public Almacen(int capacidadMaxima, Tabla tablaInicial, double precioBase)
         {
             _capacidadMaxima = capacidadMaxima;
-            _sortedList = new List();
+            _sortedList = new List<Tabla>();
             _precioBase = precioBase;
 
             _tablaInicial = tablaInicial;
@@ -23,7 +23,7 @@ namespace Solucion
             Tabla? return_table = null;
             for (int pos_tabla = 0; pos_tabla < _sortedList.Count(); ++pos_tabla) {
                 if (_sortedList[pos_tabla].GetAncho() >= ancho && _sortedList[pos_tabla].GetLargo() >= largo) {
-                    return_table = cortarTabla(_sortedList[pos_tabla], ancho, largo);
+                    cortarTabla(_sortedList[pos_tabla], ancho, largo);
                     _sortedList.RemoveAt(pos_tabla);
                 }
             }
