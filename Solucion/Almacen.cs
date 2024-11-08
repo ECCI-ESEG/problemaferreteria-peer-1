@@ -21,7 +21,8 @@ namespace Solucion
 
         public Tabla? GetTabla(double ancho, double largo) {
             Tabla? return_table = null;
-            for (int pos_tabla = 0; pos_tabla < _sortedList.Count(); ++pos_tabla) {
+            
+            for (int pos_tabla = 0; pos_tabla < _sortedList.Count; ++pos_tabla) {
                 if (_sortedList[pos_tabla].GetAncho() >= ancho && _sortedList[pos_tabla].GetLargo() >= largo) {
                     cortarTabla(_sortedList[pos_tabla], ancho, largo);
                     _sortedList.RemoveAt(pos_tabla);
@@ -60,7 +61,7 @@ namespace Solucion
         private void insertarATabla(Tabla tabla) {
             bool inserted = false;
 
-            for (int sizes = 0; sizes < _sortedList.Count(); ++sizes) {
+            for (int sizes = 0; sizes < _sortedList.Count; ++sizes) {
                 if (_sortedList[sizes].GetAncho() >= tabla.GetAncho()) {
                     if (_sortedList[sizes].GetLargo() >= tabla.GetLargo()) {
                         _sortedList.Insert(sizes, tabla);
@@ -68,13 +69,13 @@ namespace Solucion
                 }
             }
 
-            if (!inserted && _sortedList.Count() < _capacidadMaxima) {
+            if (!inserted && _sortedList.Count < _capacidadMaxima) {
                 _sortedList.Add(tabla);
             }
         }
         
         private Tabla? buyTable() {
-            if (_sortedList.Count() > _capacidadMaxima) {
+            if (_sortedList.Count > _capacidadMaxima) {
                 return null;
             }
 
