@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 
-using Solucion.Tabla;
-
 namespace Solucion
 {
     public class Almacen
