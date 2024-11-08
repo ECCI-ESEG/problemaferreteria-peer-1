@@ -1,6 +1,4 @@
 using System;
-using Solucion.Tabla;
-using Solucion.Almacen;
 
 namespace Solucion
 {
