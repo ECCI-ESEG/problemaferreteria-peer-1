@@ -15,7 +15,7 @@ namespace Solucion
         
         public double ProcesarSolicitud(double anchoSolicitado, double largoSolicitado)
         {
-            Tabla return_table = _almacen.GetTabla(anchoSolicitado, largoSolicitado);
+            Tabla? return_table = _almacen.GetTabla(anchoSolicitado, largoSolicitado);
 
             if (return_table == null) {
                 return -1;
